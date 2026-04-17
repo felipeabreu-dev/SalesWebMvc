@@ -1,0 +1,42 @@
+## --- VS Code ---
+.vscode/
+# Ignora tudo na pasta .vscode, exceto o que for necessário para o time
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+## --- .NET / C# ---
+# Pastas de compilação (Arquivos gerados automaticamente)
+bin/
+obj/
+# Publicação e pacotes
+publish/
+[Tt]est[Rr]esults/
+nupkg/
+
+## --- MySQL & Bancos de Dados ---
+# Arquivos de dados e logs do MySQL
+*.sql
+*.log
+*.err
+# Caso você use o Workbench ou exporte dumps
+.mysql-workbench/
+dump.sql
+
+## --- Segredos e Configurações ---
+# NUNCA envie senhas ou strings de conexão reais
+appsettings.Development.json
+appsettings.Local.json
+usersecrets.json
+.env
+
+## --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## --- Node.js (Se tiver frontend no projeto) ---
+node_modules/
+npm-debug.log*

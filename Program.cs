@@ -1,4 +1,7 @@
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using SalesWebMvc.Data;
 using SalesWebMvc.Services;
 
@@ -37,6 +40,16 @@ if (app.Environment.IsDevelopment())
         seedingService.Seed();
     }
 }
+
+var enUS = new CultureInfo("en-US");
+var localizantionOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo>() { enUS },
+    SupportedUICultures = new List<CultureInfo>() { enUS }
+};
+
+app.UseRequestLocalization(localizantionOptions);
 
 app.UseHttpsRedirection();
 app.UseRouting();
